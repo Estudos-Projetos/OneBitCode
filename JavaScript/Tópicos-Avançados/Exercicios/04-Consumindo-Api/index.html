@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br2">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <!-- Link Styles CSS -->
+      <link rel="stylesheet" href="./styles/style.css" />
+
+      <title>Finanças Pessoais</title>
+   </head>
+   <body>
+      <header>
+         <h1>Finanças Pessoais</h1>
+         <div id="area-balance">
+            <span>Saldo:</span>
+            <span id="balance-amount">200</span>
+         </div>
+      </header>
+      <div class="divider-x"></div>
+      <main>
+         <section id="area-transaction">
+            <h2 class="area-title">Nova Transação</h2>
+            <div id="grup-inputs">
+               <form id="form-newTransaction">
+                  <input type="text" class="id" id="id" />
+                  <div class="input">
+                     <select name="type-transaction" id="type-transaction">
+                        <option value="cash-output" selected>Retirada</option>
+                        <option value="cash-input">Entrada</option>
+                     </select>
+                  </div>
+                  <div class="input">
+                     <label for="name-transaction">Nome</label>
+                     <input type="text" id="name-transaction" autocomplete="off"/>
+                  </div>
+                  <div class="input">
+                     <label for="value-transaction">Valor</label>
+                     <input type="number" name="value-transaction" id="value-transaction" autocomplete="off"/>
+                  </div>
+                  <button type="submit">Registrar</button>
+               </form>
+            </div>
+            <div class="divider-y"></div>
+         </section>
+         <section id="area-history">
+            <h2 class="area-title">Histórico de transações</h2>
+            <div class="area-list">
+               <table id="table-history">
+                  <tbody id="history-list">
+                    
+                  </tbody>
+               </table>
+            </div>
+            <dialog class="area-edit">
+               <h2 class="area-title">Editar Transação</h2>
+               <input type="text" class="id" id="id" />
+
+               <button class="cancel">Cancelar</button>
+
+               <div id="grup-inputs">
+                  <form id="form-editTransaction">
+                     <select name="type-transaction" id="type-transaction">
+                        <option value="cash-output" selected>Retirada</option>
+                        <option value="cash-input">Entrada</option>
+                     </select>
+                     <label for="name-transaction">Nome</label>
+                     <input type="text" id="name-transaction" placeholder="Dê um nome para transação" />
+                     <label for="value-transaction">Valor</label>
+                     <input
+                        type="number"
+                        name="value-transaction"
+                        id="value-transaction"
+                        placeholder="Valor da transação"
+                     />
+                     <button type="submit">Feito</button>
+                  </form>
+               </div>
+            </dialog>
+
+            <dialog class="area-delete">
+               <h2 class="area-title">Excluir Transação</h2>
+               <div class="info-transaction">
+
+                 <div class="name">Nome: <span>Compras no Mercado</span></div>
+
+                  <p class="value">Valor: R$<span>200</span></p>
+               </div>
+               <div class="area-btn">
+                  <button class="confirm btn-delete"">Excluir</button>
+                  <button class="cancel">Cancelar</button>
+               </div>
+            </dialog>
+         </section>
+      </main>
+
+      <script src="./js/index.js"></script>
+   </body>
+</html>

@@ -1,0 +1,219 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap");
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Montserrat", sans-serif;
+}
+
+/* ROOTS */
+:root {
+   --color-primary: #f4f4f4;
+   --color-secundaty: #242424;
+   --color-verify: #47bd47;
+   --color-error: #c44949;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+ul {
+   list-style: none;
+}
+
+input#id {
+   display: none;
+}
+.divider-x {
+   background-color: #2424245b;
+   width: 100%;
+   height: 0.05rem;
+}
+.divider-y {
+   background-color: #242424;
+   width: 0.05rem;
+   height: 100%;
+
+   position: absolute;
+   right: -2.52rem;
+   top: 1.4rem;
+   /* transform: translate(-50%, -50%); */
+}
+
+.area-title {
+   font-size: 1.2125rem;
+   font-weight: 700;
+   margin-bottom: 2rem;
+}
+/* Body */
+body {
+   width: 100vw;
+   height: 100vh;
+   padding: 4.25rem 5.25rem;
+   color: var(--color-secundaty);
+   background-color: var(--color-primary);
+}
+/* Header */
+header {
+   width: 100%;
+   font-weight: 700;
+   margin-bottom: 2.38rem;
+}
+header h1 {
+   font-size: 1.675rem;
+   margin-bottom: 1.08rem;
+}
+header #area-balance span {
+   font-size: 1.05rem;
+}
+
+/* Main */
+main {
+   width: 100%;
+   margin-top: 1.8rem;
+   display: flex;
+
+   gap: 5rem;
+}
+
+/* Area Transaction */
+#area-transaction {
+   position: relative;
+   max-width: 400px;
+}
+
+#grup-inputs form {
+   width: 100%;
+   padding-left: 2rem;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   gap: 0.8rem;
+}
+#grup-inputs button {
+   width: 75%;
+   margin-top: 0.8rem;
+   padding: 0.3rem;
+   margin: 2px;
+
+   border-radius: 5px;
+}
+#grup-inputs button:hover {
+   background-color: var(--color-verify);
+}
+.input {
+   display: flex;
+   flex-direction: column;
+}
+.input #type-transaction {
+   width: 60%;
+}
+
+/* Area Histórico */
+#area-history {
+   width: 100%;
+   position: relative;
+}
+#table-history {
+   width: 100%;
+}
+#table-history table {
+   border-collapse: collapse;
+   width: 100%;
+}
+
+#table-history td {
+   text-align: center;
+}
+
+#table-history tr:nth-child(even) {
+   background-color: #c8c7c762;
+}
+#table-history td.cash-input {
+   color: var(--color-verify);
+}
+#table-history td.cash-output {
+   color: var(--color-error);
+}
+#table-history td.name {
+   min-width: 70%;
+   padding: 0 0 0 0.5rem;
+   text-align: start;
+}
+#table-history td.value {
+   max-width: 5%;
+}
+
+#table-history button {
+   padding: 0.3rem;
+   margin: 2px;
+   outline: none;
+   border: 1px solid #242424;
+   border-radius: 5px;
+}
+#table-history .btn-edit:hover {
+   background-color: var(--color-verify);
+}
+
+#table-history .btn-delete:hover {
+   background-color: var(--color-error);
+   color: var(--color-primary);
+}
+
+/* Area Edit */
+
+dialog {
+   max-width: 500px;
+   width: 500px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 1.1rem;
+}
+dialog button {
+   padding: 0.3rem;
+   margin: 2px;
+   outline: none;
+   border: 1px solid #242424;
+   border-radius: 5px;
+}
+dialog .btn-delete:hover {
+   background-color: var(--color-error);
+   color: var(--color-primary);
+}
+dialog button.cancel {
+   border: none;
+   background-color: transparent;
+   padding: 0.2rem;
+}
+dialog.area-edit button.cancel {
+   position: absolute;
+   top: 1.1rem;
+   right: 1.1rem;
+}
+dialog button.cancel:hover {
+   color: var(--color-error);
+}
+
+dialog.area-edit #grup-inputs form {
+   width: 80%;
+   padding: 0;
+}
+dialog.area-edit #grup-inputs :is(input, select) {
+   border: 1px solid var(--color-secundaty);
+}
+
+dialog.area-edit #grup-inputs #type-transaction {
+   width: 60%;
+}
+
+/* Area Delete */
+
+dialog.area-delete :is(h2, .info-transaction, .area-btn) {
+   margin: 1.2rem;
+}

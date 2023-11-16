@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link style ICONS -->
+    <link rel="stylesheet" href="./components-svg/style.css" />
+    <!-- Link style CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link style Buttons -->
+    <link rel="stylesheet" href="buttons.css" />
+
+    <title>Jogo da Velha</title>
+  </head>
+  <body>
+    <header>
+      <h1>Jogo da Velha</h1>
+    </header>
+    <main>
+      <section id="cadastrar">
+        <div>
+          <label for="player1">x -</label>
+          <input type="text" placeholder="Nome do Player 1" id="player1" />
+        </div>
+        <div>
+          <label for="player2">o -</label>
+          <input type="text" placeholder="Nome do Player 2" id="player2" />
+        </div>
+        <button id="submit">Jogar</button>
+      </section>
+      <section id="gameBoard">
+        <div id="players">
+          <div class="turn show" id="player-x">
+            <h2 id="player1"></h2>
+            <i class="icon-x"></i>
+          </div>
+          <div class="turn" id="player-circle">
+            <h2 id="player2"></h2>
+            <i class="icon-circle"></i>
+          </div>
+        </div>
+        <div class="grid-area">
+          <button class="btn-area" id="btn-1" data-index="0"></button>
+          <button class="btn-area" id="btn-2" data-index="1"></button>
+          <button class="btn-area" id="btn-3" data-index="2"></button>
+          <button class="btn-area" id="btn-4" data-index="3"></button>
+          <button class="btn-area" id="btn-5" data-index="4"></button>
+          <button class="btn-area" id="btn-6" data-index="5"></button>
+          <button class="btn-area" id="btn-7" data-index="6"></button>
+          <button class="btn-area" id="btn-8" data-index="7"></button>
+          <button class="btn-area" id="btn-9" data-index="8"></button>
+        </div>
+        <h2 id="resultado"></h2>
+      </section>
+      <button id="btn-restart">Restart</button>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
