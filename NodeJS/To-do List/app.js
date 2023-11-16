@@ -1,6 +1,7 @@
 const express = require('express');
-
 const checklistRouter = require('./src/routes/checklists');
+
+require('./config/database');
 
 
 const app = express()
