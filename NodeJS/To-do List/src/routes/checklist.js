@@ -2,9 +2,16 @@ const express = require('express');
 
 const router = express.Router()
 
-router.get("/", (req, res) => { 
-    console.log("checklists")
-    res.send("Pag checklist")
+const CheckList = require("../models/checklist")
+
+router.get("/", async (req, res) => { 
+    try {
+        const checklists = await CheckList.find({})
+        res.status(200).render("pages/checklists")
+    } catch (error) {
+        res.status(400).render("pages/error")
+    }
+    
 })
 
 router.post("/", (req, res) => {
